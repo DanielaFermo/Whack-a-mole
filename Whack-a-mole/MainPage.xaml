@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Whack_a_mole.MainPage">
+
+    <VerticalStackLayout
+       Padding="20"
+        Spacing="10"
+        >
+        <Label
+            Text="WHACK-A-MOLE"
+            FontSize="32"
+            HorizontalOptions="Center"
+            />
+        <HorizontalStackLayout
+            HorizontalOptions="Center"
+            Spacing="40">
+            <Label
+              Text="30"
+              FontSize="20"
+              x:Name="Timer"
+                />
+            <Label
+            Text="Score : 0"
+            FontSize="20"
+            x:Name="ScoreLabel"
+            />
+         </HorizontalStackLayout>
+        <Grid
+            x:Name="GameGrid"
+            HeightRequest="300"
+            WidthRequest="300">
+
+            <Border
+                x:Name="Mole"
+                ZIndex="1"
+                Opacity="0"
+                InputTransparent="True"
+                Margin="0"
+                BackgroundColor="SaddleBrown"
+                Stroke="black"
+                StrokeThickness="3"
+                StrokeShape="RoundRectangle 20"
+                Padding="10">
+                <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Border.GestureRecognizers> 
+
+                <Label
+                    Text="&#x1F42D;"
+                    FontSize="40"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    />
+            </Border>
+
+        </Grid>
+        <Button
+            x:Name="StratButton"
+            Text="Start Game"
+            Clicked="StratButton_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
